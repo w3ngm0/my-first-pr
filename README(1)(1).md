@@ -9,6 +9,13 @@ You can use the following guide to learn how and why to create a pull request.
 A pull request is a way to suggest changes to a repository. When you create a pull request, you propose your changes and request that someone review and pull in your contribution and merge them into their branch. Pull requests show differences between the content from both branches and the changes are visible in the repository.
 
 <!-- TODO: Add information on PRs and forks. -->
+- Forks create a seperate copyof a repository for significant changes or different directions 
+- Fork is an independent repository not linked to the original repository 
+- Owned by users who created them and involves significant changes 
+- In terms of collaboration it is used to develop ideas in isolation from the main team. 
+
+- A pull request is a method used in collaboarative software development within VCS like Git, to propose changes to a codebase. 
+
 
 ## Set up your environment
 
@@ -47,24 +54,34 @@ git remote add origin <URL>
 ```bash
 git remote -v
 ```
+3. Make sure to add the file ReadMe.md 
+4. Have you committed it with the -m "message"? 
 
-3. Consider why it does not provide a URL for pull, only `push` and `fetch`?
+4. Consider why it does not provide a URL for pull, only `push` and `fetch`?
 
----
+--- 
 
-4. Push the local repository to the remote repository.
+5. Push the local repository to the remote repository.
 
    ```bash
    git push -u origin main
    ```
 
-5. Refresh the GitHub page for your repository. You should see this `README.md` file.
+6. Refresh the GitHub page for your repository. You should see this `README.md` file.
 
 ### Why are pull requests called "Pull Requests"? (wrong answer)
 
 Pull requests are so named basically because you are asking to _pull_ changes from a remote to your local repository. And that's because you have to ask permission to copy changes out of the repository, even if you have read access to that repository.
 
 <!--TODO: This answer is SO wrong, I think we need to fix it! -->
+Common misconception that the  "Pull" in the name "Pull request", it refers to the action that the repository maintainers would take after reviewing the request and then "pull" our changesinto their repository not the other way around!
+
+A Pull request (PR) is named as such because we are requesting someone to 'pull' our changes from our branch or to fork this into another branch, typically the main branch of a repository. 
+
+Pulling changes in Git terminology refers to the action of fetching and merging chnages from one branch or repository into another. 
+When we open the pull request we are asking maintainers/contributors to review the changes and if they approve of such changes, to 'pull' (merge) these changes into their repository. 
+
+A pull request is not about copying changes from a remote repository to our local machine. It is about suggesting chnages form our branch to be integrated into the target repository. The review process will ensure that the proposed changes are examined for quality, compatibility and security before they become a part of the original project. 
 
 ### Create a local branch
 
