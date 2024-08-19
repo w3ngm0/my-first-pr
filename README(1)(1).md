@@ -59,7 +59,9 @@ git remote -v
 
 4. Consider why it does not provide a URL for pull, only `push` and `fetch`?
 
---- 
+---  It does not provide a URL for pull, only `push` and `fetch` because Git doesn't need to provide a separate URL for `pull` because it is built on top of the `fetch` command. When we `pull`, Git already knows where to fetch from and where to push to, using the remote repository URL. 
+
+ --- Since `pull` is just a `fetch` followed by a `merge`, it uses the same remote URL configured for fetching. Hence why Git doesn't require a separate URL for `pull` because it hangles the merge operation locally after fetching. 
 
 5. Push the local repository to the remote repository.
 
@@ -74,7 +76,7 @@ git remote -v
 Pull requests are so named basically because you are asking to _pull_ changes from a remote to your local repository. And that's because you have to ask permission to copy changes out of the repository, even if you have read access to that repository.
 
 <!--TODO: This answer is SO wrong, I think we need to fix it! -->
-Common misconception that the  "Pull" in the name "Pull request", it refers to the action that the repository maintainers would take after reviewing the request and then "pull" our changesinto their repository not the other way around!
+Common misconception that the  "Pull" in the name "Pull request", it refers to the action that the repository maintainers would take after reviewing the request and then "pull" our changes into their repository not the other way around!
 
 A Pull request (PR) is named as such because we are requesting someone to 'pull' our changes from our branch or to fork this into another branch, typically the main branch of a repository. 
 
@@ -116,6 +118,12 @@ You probably got a similar error to this:
 
 ```text
 fatal: The current branch fix/pr-definition has no upstream branch
+```
+<!--TO DO: Answer this part of the error -->
+-> Having no upstream branch means that **your local branch is not linked to a branch on the remote repository**
+-> This can happen when we create a branch locally but have not pushed it to the remote yet. To fix this use the command
+```bash
+git --set-upstream origin fix/pr-definition
 ```
 
 5. What does this error mean? Why did it happen? Git explains how to fix it by running a command that will:
