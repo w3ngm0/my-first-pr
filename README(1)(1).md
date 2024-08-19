@@ -51,7 +51,7 @@ git remote add origin <URL>
 
 2. Check that the remote repository was added.
 
-```bash
+```bash                                              
 git remote -v
 ```
 3. Make sure to add the file ReadMe.md 
